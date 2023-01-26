@@ -12,7 +12,7 @@ while True:
     tokens = user_input.split(" ")
 
     # if first token is q then quit
-    if "q" in tokens:
+    if "q" in tokens or "quit" in tokens:
         print("Thank you, Bye")
         break 
 
