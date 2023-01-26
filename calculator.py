@@ -3,14 +3,20 @@
 from arithmetic import (add, subtract, multiply, divide, square, cube,
                         power, mod, )
 
+equations = open("operations_todo")
 
-# Loop until break
-while True:
-    # get user input
-    user_input = input("Enter your equation: ")
-    # tokenize input
-    tokens = user_input.split(" ")
+# Loop until break commented out user input for change to file input
+# while True:
+#     # get user input
+#     user_input = input("Enter your equation: ")
+#     # tokenize input
+#     tokens = user_input.split(" ")
 
+for equation in equations:
+    equation = equation.rstrip()  # strips trailing whitespace
+    # tokenize input 
+    tokens = equation.split(" ")
+    
     # if first token is q then quit
     if "q" in tokens or "quit" in tokens:
         print("Thank you, Bye")
@@ -46,13 +52,13 @@ while True:
     elif operation == "+":
     # calls function that matches operation 
     # using the float other tokens as numbers
-        answer = add(float(num1), float(num2))
+        answer = add(tokens)
 
     elif operation == "-":
         answer = subtract(float(num1), float(num2))
 
     elif operation == "*":
-        answer = multiply(float(num1), float(num2))
+        answer = multiply(tokens)
 
     elif operation == "/":
         answer = divide(float(num1), float(num2))
@@ -61,7 +67,7 @@ while True:
         answer = square(float(num1))
 
     elif operation == "cube":
-        asnwer = cube(float(num1))
+        answer = cube(float(num1))
 
     elif operation == "pow":
         answer = power(float(num1), float(num2))
