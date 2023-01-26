@@ -16,6 +16,11 @@ while True:
         print("Thank you, Bye")
         break 
 
+    # checks user gave enough inputs
+    elif len(tokens) < 2:
+        print("Not enough inputs.")
+        continue
+
     # assign variable names to tokens
     operation = tokens[0]
     num1 = tokens[1]
@@ -32,9 +37,13 @@ while True:
     # variable assignment for result of function
     answer = None
 
+    # validates that inputs are numbers
+    if not num1.isdigit() or not num2.isdigit():
+        print("Those aren't numbers!")
+        continue
 
     # if statement for each operation 
-    if operation == "+":
+    elif operation == "+":
     # calls function that matches operation 
     # using the float other tokens as numbers
         answer = add(float(num1), float(num2))
