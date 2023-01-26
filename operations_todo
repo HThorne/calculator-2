@@ -4,5 +4,5 @@ pow 3 2
 * 6 7 8
 cube 3
 mod 7 3
-/ 8 2
+/ 10 3
 square 4

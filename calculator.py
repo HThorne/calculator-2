@@ -78,6 +78,6 @@ for equation in equations:
     else: 
         answer = "Please enter an operator followed by 2 integers"
 
-    print(answer)
+    print(round(answer, 3))
 
     
